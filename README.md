@@ -9,12 +9,12 @@ This Program Simulates a CPU Scheduling algorithm. It gives the CPU to an algori
 ## Instructions
 
 To run the Stimulation:
-
+g
 `$ ./main no_of_resources no_of_processes.`
 
 ## Implementation.
 
-Each process has a ** Program Control block(PCB) **, which consists of the Process ID (PID) its memory needs ,arrival_time, burst_time, turnaround_time, wait_time, end_time, and remaining_time;
+Each process has a **Program Control block(PCB)**, which consists of the Process ID (PID) its memory needs ,arrival_time, burst_time, turnaround_time, wait_time, end_time, and remaining_time;
 
 Each Process must have a unique PID, to keep things simple I would generate their PID in increasing order, which would ensure a unique PID, and would not require book-keeping. The ideal method to maintain the PID would be to generate the PID randomly and then check if there is a process with that PID, if there is such a process, generate another PID, and check again.
 
