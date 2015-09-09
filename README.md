@@ -1,14 +1,16 @@
 # CPU Scheduling
 
-This Program Simulates a CPU Scheduling algorithm. It gives the CPU to an algorithm with the maximum priority which depends on 
-	1. Priority	{p}			40%
-	2. Wait Time.			30%
-	3. Total Cost 			30%
+This Program Simulates a CPU Scheduling algorithm. It gives the CPU to an algorithm with the maximum priority which depends on:
+
+
+	* Priority	{p}			40%
+	* Wait Time.			30%
+	* Total Cost 			30%
 # Instructions
 
 To run the Stimulation:
 
-$ ./main no_of_resources no_of_processes.
+`$ ./main no_of_resources no_of_processes.`
 
 Each process has a Program Control block(PCB), which consists of the Process ID (PID) its memory needs ,arrival_time, burst_time, turnaround_time, wait_time, end_time, and remaining_time;
 
