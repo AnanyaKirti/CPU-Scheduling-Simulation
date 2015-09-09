@@ -6,13 +6,15 @@ This Program Simulates a CPU Scheduling algorithm. It gives the CPU to an algori
 	* Priority	{p}			40%
 	* Wait Time.			30%
 	* Total Cost 			30%
-# Instructions
+## Instructions
 
 To run the Stimulation:
 
 `$ ./main no_of_resources no_of_processes.`
 
-Each process has a Program Control block(PCB), which consists of the Process ID (PID) its memory needs ,arrival_time, burst_time, turnaround_time, wait_time, end_time, and remaining_time;
+## Implementation.
+
+Each process has a ** Program Control block(PCB) **, which consists of the Process ID (PID) its memory needs ,arrival_time, burst_time, turnaround_time, wait_time, end_time, and remaining_time;
 
 Each Process must have a unique PID, to keep things simple I would generate their PID in increasing order, which would ensure a unique PID, and would not require book-keeping. The ideal method to maintain the PID would be to generate the PID randomly and then check if there is a process with that PID, if there is such a process, generate another PID, and check again.
 
@@ -26,16 +28,15 @@ The Process might require one or more of this resource, in a sequence. Hence I w
 
 If a process is running, and yet the scheduler decides to allot the CPU time to another process (Context Switch) then the current state of the process is saved in it's PCB. And another program is given CPU time.
 
+I have assumed that if a process is using a resource, then it would wait until it is done using that resource, it can be premepted. This is however not the case in a real Operating System. For instance there is an I/O intensive task then it is premepted until the I/O is completed.
+
 
 
 # Observations.
-Since my scheduler keeps waiting time as a consideration for context switch there would be no starvation.
+Since the scheduler keeps waiting time as a consideration for context switch, hence there would be no starvation.
 
-The performance of an algorithm depends on the system it is being built for.
-This algorithm is better than FCFS, which had high waiting time, and reponse time.
-For a certain process, STRF was faster, however if there was a long burst of CPU given, then my algorithm was better.
+I have made some functions, which have some overhead, I did not consider these overheads for my experimentation, as there might be a better way to implement these.
 
+Scheduling has some over head, which is not to be neglected.
 
-I have made some functions, which have some overhead ,I did not consider these overheads for my experimentation,as there might be a better way to implement these.
-
-Scheduling has some over head, which is not to be neglected, in which case FCFS has an advantage.
+The priority queue implemented by me could be implemented more efficently by using a max heap of some kind.
