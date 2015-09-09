@@ -1,9 +1,14 @@
 # CPU Scheduling
 
 This Program Simulates a CPU Scheduling algorithm. It gives the CPU to an algorithm with the maximum priority which depends on 
- 	1. Priority	{p}			40%
- 	2. Wait Time.			30%
- 	3. Total Cost 			30%
+	1. Priority	{p}			40%
+	2. Wait Time.			30%
+	3. Total Cost 			30%
+# Instructions
+
+To run the Stimulation:
+
+$ ./main no_of_resources no_of_processes.
 
 Each process has a Program Control block(PCB), which consists of the Process ID (PID) its memory needs ,arrival_time, burst_time, turnaround_time, wait_time, end_time, and remaining_time;
 
@@ -19,24 +24,16 @@ The Process might require one or more of this resource, in a sequence. Hence I w
 
 If a process is running, and yet the scheduler decides to allot the CPU time to another process (Context Switch) then the current state of the process is saved in it's PCB. And another program is given CPU time.
 
-To run the Stimulation
- 
- $ ./main no_of_resources no_of_processes.
-
- I have assigned weights to 
- 	1. Priority	{p}			40%
- 	2. Wait Time.			30%
- 	3. Total Cost 			30%
- which can be tweeked, once they are set, they should not be altered.
-
- # Observations.
- Since my scheduler keeps waiting time as a consideration for context switch there would be no starvation.
-
- The performance of an algorithm depends on the system it is being built for.
- My algorithm was better than FCFS, which had high waiting time, and reponse time.
- For a certain process, STRF was faster, however if there was a long burst of CPU given, then my algorithm was better.
 
 
- I have made some functions, which have some overhead ,I did not consider these overheads for my experimentation,as there might be a better way to implement these.
+# Observations.
+Since my scheduler keeps waiting time as a consideration for context switch there would be no starvation.
 
- Scheduling has some over head, which is not to be neglected, in which case FCFS has an advantage.
+The performance of an algorithm depends on the system it is being built for.
+This algorithm is better than FCFS, which had high waiting time, and reponse time.
+For a certain process, STRF was faster, however if there was a long burst of CPU given, then my algorithm was better.
+
+
+I have made some functions, which have some overhead ,I did not consider these overheads for my experimentation,as there might be a better way to implement these.
+
+Scheduling has some over head, which is not to be neglected, in which case FCFS has an advantage.
